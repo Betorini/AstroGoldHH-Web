@@ -1,0 +1,3 @@
+2026-03-15 17:57:44 | INFO     | data_fetcher | Fetching GC=F         | period=2y    | interval=1d
+2026-03-15 17:57:45 | INFO     | data_fetcher | Saved  GC=F         → GC_F_1d.csv  (502 rows)
+2026-03-15 17:57:45 | DEBUG    | data_fetcher | Loaded GC=F  (502 rows) from GC_F_1d.csv

@@ -1,0 +1,17 @@
+2026-03-15 17:57:45 | INFO     | strategy_engine | ============================================================
+2026-03-15 17:57:45 | INFO     | strategy_engine | AstroGoldHH — Strategy Engine  (AstroGoldHH-Institutional-Strategy)
+2026-03-15 17:57:45 | INFO     | strategy_engine | EMA 50/200  |  MACD 12/26/9  |  RSI 14
+2026-03-15 17:57:45 | INFO     | strategy_engine | Input rows: 502
+2026-03-15 17:57:45 | INFO     | strategy_engine | ============================================================
+2026-03-15 17:57:45 | DEBUG    | strategy_engine | EMA_50: 49 warm-up NaNs | EMA_200: 199 warm-up NaNs
+2026-03-15 17:57:45 | INFO     | strategy_engine | EMA indicators   ✓
+2026-03-15 17:57:45 | DEBUG    | strategy_engine | MACD columns appended: ['MACD_line', 'MACD_hist', 'MACD_signal_line']
+2026-03-15 17:57:45 | INFO     | strategy_engine | MACD indicators  ✓
+2026-03-15 17:57:45 | DEBUG    | strategy_engine | RSI_14 appended (1 NaNs warm-up).
+2026-03-15 17:57:45 | INFO     | strategy_engine | RSI indicator    ✓
+2026-03-15 17:57:45 | DEBUG    | strategy_engine | BUY  signal @ 2025-01-02 00:00:00  Close=2658.90  RSI=53.0  MACDh=0.3328
+2026-03-15 17:57:45 | INFO     | strategy_engine | Signal scan complete — BUY: 1  SELL: 0  (of 502 bars)
+2026-03-15 17:57:45 | INFO     | strategy_engine | Signal scan      ✓
+2026-03-15 17:57:45 | INFO     | strategy_engine | ------------------------------------------------------------
+2026-03-15 17:57:45 | INFO     | strategy_engine | Output rows: 502  |  BUY signals: 1  |  SELL signals: 0
+2026-03-15 17:57:45 | INFO     | strategy_engine | ------------------------------------------------------------

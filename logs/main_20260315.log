@@ -1,0 +1,37 @@
+2026-03-15 17:57:44 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 17:57:44 | INFO     | AstroGoldHH | ║  /analyze  |  GC=F  |  period=2y  |  interval=1d             ║
+2026-03-15 17:57:44 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 17:57:44 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Fetching market data …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 1 — 502 rows saved → GC_F_1d.csv
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Loading CSV for strategy …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 1 — Loaded 502 rows for strategy engine
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Running AstroGoldHH strategy engine …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 2 — Indicators calculated | BUY: 1  SELL: 0
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Saving strategy output CSV …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 2 — Saved → GC_F_strategy_output.csv
+2026-03-15 17:57:45 | INFO     | AstroGoldHH | 
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   Signal preview (last 5):
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |     BUY           2025-01-02 00:00:00  Close=2658.90  RSI=53.0
+2026-03-15 17:57:45 | INFO     | AstroGoldHH | 
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   /analyze completed in 0.71s
+2026-03-15 17:57:45 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 17:57:45 | INFO     | AstroGoldHH | ║  /render  |  GC=F  |  offline HTML dashboard                 ║
+2026-03-15 17:57:45 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 3 — Loading strategy output …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 3 — Loaded 502 rows from GC_F_strategy_output.csv
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 3 — Building Plotly dashboard …
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ✓  Layer 3 — Figure assembled
+2026-03-15 17:57:45 | INFO     | AstroGoldHH |   ⟳  Layer 3 — Saving offline HTML …
+2026-03-15 17:57:46 | INFO     | AstroGoldHH |   ✓  Layer 3 — Dashboard saved → GC_F_dashboard.html
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | 
+2026-03-15 17:57:46 | INFO     | AstroGoldHH |   /render completed in 0.95s
+2026-03-15 17:57:46 | INFO     | AstroGoldHH |   Open in browser: /Users/admin/Desktop/AstroGoldHH/data/GC_F_dashboard.html
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | 
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ║  SESSION SUMMARY                                             ║
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╠══════════════════════════════════════════════════════════════╣
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ║  ✓  /analyze     PASSED                               ║
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ║  ✓  /render      PASSED                                ║
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╠══════════════════════════════════════════════════════════════╣
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ║  Total time: 1.66s                                            ║
+2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
