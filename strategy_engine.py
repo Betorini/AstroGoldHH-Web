@@ -28,7 +28,10 @@ import numpy as np
 import pandas as pd
 
 # ── Optional dependency guard ────────────────────────────────────────────────
-def calculate_ema(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.DataFrame:
+# ของใหม่ (ปลอดภัยกว่า)
+def calculate_ema(df: pd.DataFrame, config: StrategyConfig = None) -> pd.DataFrame:
+    if config is None:
+        config = CONFIG
     result = df.copy()
     # ใช้ ewm (Exponential Weighted Moving Average) ของ Pandas โดยตรง
     result[f"EMA_{config.ema_short}"] = result["Close"].ewm(span=config.ema_short, adjust=False).mean()
