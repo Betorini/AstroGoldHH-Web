@@ -28,11 +28,12 @@ import numpy as np
 import pandas as pd
 
 # ── Optional dependency guard ────────────────────────────────────────────────
-try:
-    import pandas_ta_openbb as ta  # type: ignore[import]
-except ImportError:
-    print("[FATAL] pandas_ta_openbb is not installed. Run: pip install pandas-ta-openbb")
-    sys.exit(1)
+def calculate_ema(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.DataFrame:
+    result = df.copy()
+    # ใช้ ewm (Exponential Weighted Moving Average) ของ Pandas โดยตรง
+    result[f"EMA_{config.ema_short}"] = result["Close"].ewm(span=config.ema_short, adjust=False).mean()
+    result[f"EMA_{config.ema_long}"] = result["Close"].ewm(span=config.ema_long, adjust=False).mean()
+    return result
 
 # ── Import Layer 1 ────────────────────────────────────────────────────────────
 try:
@@ -171,43 +172,27 @@ def calculate_ema(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.DataF
 
 def calculate_macd(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.DataFrame:
     """
-    Append MACD_line, MACD_signal, and MACD_hist columns to *df*.
-
-    Uses pandas_ta which returns columns named:
-        MACD_{fast}_{slow}_{signal}
-        MACDs_{fast}_{slow}_{signal}
-        MACDh_{fast}_{slow}_{signal}
-
-    We rename to generic MACD_line / MACD_signal / MACD_hist for portability.
+    Append MACD_line, MACD_signal_line, and MACD_hist columns to *df*
+    using native Pandas ewm() (Exponential Weighted Moving Average).
     """
     try:
         _validate_input(df, "calculate_macd")
         result = df.copy()
 
-        macd_df: pd.DataFrame = ta.macd(
-            result["Close"],
-            fast=config.macd_fast,
-            slow=config.macd_slow,
-            signal=config.macd_signal,
-        )
-
-        if macd_df is None or macd_df.empty:
-            raise ValueError("pandas_ta.macd() returned empty result.")
-
-        # Rename columns defensively regardless of pandas_ta version
-        col_map = {}
-        for col in macd_df.columns:
-            lower = col.lower()
-            if lower.startswith("macdh"):
-                col_map[col] = "MACD_hist"
-            elif lower.startswith("macds"):
-                col_map[col] = "MACD_signal_line"
-            elif lower.startswith("macd"):
-                col_map[col] = "MACD_line"
-        macd_df = macd_df.rename(columns=col_map)
-
-        result = pd.concat([result, macd_df], axis=1)
-        log.debug("MACD columns appended: %s", list(macd_df.columns))
+        # คำนวณ EMA 12 และ EMA 26
+        ema_fast = result["Close"].ewm(span=config.macd_fast, adjust=False).mean()
+        ema_slow = result["Close"].ewm(span=config.macd_slow, adjust=False).mean()
+        
+        # MACD Line = Fast EMA - Slow EMA
+        result["MACD_line"] = ema_fast - ema_slow
+        
+        # Signal Line = EMA 9 ของ MACD Line
+        result["MACD_signal_line"] = result["MACD_line"].ewm(span=config.macd_signal, adjust=False).mean()
+        
+        # MACD Histogram = MACD Line - Signal Line
+        result["MACD_hist"] = result["MACD_line"] - result["MACD_signal_line"]
+        
+        log.debug("MACD calculated natively.")
         return result
 
     except Exception as exc:
@@ -217,19 +202,27 @@ def calculate_macd(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.Data
 
 def calculate_rsi(df: pd.DataFrame, config: StrategyConfig = CONFIG) -> pd.DataFrame:
     """
-    Append RSI_14 column to *df*.
+    Append RSI column to *df* using native Pandas/Numpy math.
     """
     try:
         _validate_input(df, "calculate_rsi")
         result = df.copy()
-
-        rsi_series: pd.Series = ta.rsi(result["Close"], length=config.rsi_period)
-        if rsi_series is None or rsi_series.empty:
-            raise ValueError("pandas_ta.rsi() returned empty result.")
-
-        result[f"RSI_{config.rsi_period}"] = rsi_series
-        log.debug("RSI_%d appended (%d NaNs warm-up).",
-                  config.rsi_period, rsi_series.isna().sum())
+        
+        # คำนวณความเปลี่ยนแปลงของราคา
+        delta = result["Close"].diff()
+        
+        # แยก Gain (กำไร) และ Loss (ขาดทุน)
+        gain = (delta.where(delta > 0, 0))
+        loss = (-delta.where(delta < 0, 0))
+        
+        # ใช้วิธีคำนวณแบบ Wilder's Smoothing (มาตรฐานเดียวกับที่ใช้ในตลาด)
+        avg_gain = gain.ewm(alpha=1/config.rsi_period, adjust=False).mean()
+        avg_loss = loss.ewm(alpha=1/config.rsi_period, adjust=False).mean()
+        
+        rs = avg_gain / avg_loss
+        result[f"RSI_{config.rsi_period}"] = 100 - (100 / (1 + rs))
+        
+        log.debug("RSI_%d calculated natively.", config.rsi_period)
         return result
 
     except Exception as exc:
