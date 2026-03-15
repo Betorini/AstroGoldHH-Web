@@ -31,7 +31,7 @@ import pandas as pd
 try:
     import pandas_ta_openbb as ta  # type: ignore[import]
 except ImportError:
-    print("[FATAL] pandas_ta is not installed.  Run:  pip install pandas-ta")
+    print("[FATAL] pandas_ta_openbb is not installed. Run: pip install pandas-ta-openbb")
     sys.exit(1)
 
 # ── Import Layer 1 ────────────────────────────────────────────────────────────
