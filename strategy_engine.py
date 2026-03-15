@@ -29,7 +29,7 @@ import pandas as pd
 
 # ── Optional dependency guard ────────────────────────────────────────────────
 try:
-    import pandas_ta as ta  # type: ignore[import]
+    import pandas_ta_openbb as ta  # type: ignore[import]
 except ImportError:
     print("[FATAL] pandas_ta is not installed.  Run:  pip install pandas-ta")
     sys.exit(1)
