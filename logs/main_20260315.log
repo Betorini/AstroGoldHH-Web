@@ -35,3 +35,75 @@
 2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╠══════════════════════════════════════════════════════════════╣
 2026-03-15 17:57:46 | INFO     | AstroGoldHH | ║  Total time: 1.66s                                            ║
 2026-03-15 17:57:46 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 20:34:37 | WARNING  | AstroGoldHH | 
+No command specified.  Use --analyze, --render, --validate, or a combination.
+2026-03-15 20:43:32 | WARNING  | AstroGoldHH | 
+No command specified.  Use --analyze, --render, --validate, or a combination.
+2026-03-15 21:32:51 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 21:32:51 | INFO     | AstroGoldHH | ║  /analyze  |  GC=F  |  period=1y  |  interval=1d             ║
+2026-03-15 21:32:51 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 21:32:51 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Fetching market data …
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ✓  Layer 1 — 251 rows saved → GC_F_1d.csv
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Loading CSV for strategy …
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ✓  Layer 1 — Loaded 251 rows for strategy engine
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Running AstroGoldHH strategy engine …
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ✓  Layer 2 — Indicators calculated | BUY: 0  SELL: 0
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Saving strategy output CSV …
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   ✓  Layer 2 — Saved → GC_F_strategy_output.csv
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   No signals generated — consider a longer period (e.g. --period 5y).
+2026-03-15 21:32:52 | INFO     | AstroGoldHH | 
+2026-03-15 21:32:52 | INFO     | AstroGoldHH |   /analyze completed in 0.99s
+2026-03-15 21:33:52 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 21:33:52 | INFO     | AstroGoldHH | ║  /analyze  |  GC=F  |  period=1y  |  interval=1d             ║
+2026-03-15 21:33:52 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 21:33:52 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Fetching market data …
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ✓  Layer 1 — 251 rows saved → GC_F_1d.csv
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Loading CSV for strategy …
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ✓  Layer 1 — Loaded 251 rows for strategy engine
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Running AstroGoldHH strategy engine …
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ✓  Layer 2 — Indicators calculated | BUY: 0  SELL: 0
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Saving strategy output CSV …
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   ✓  Layer 2 — Saved → GC_F_strategy_output.csv
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   No signals generated — consider a longer period (e.g. --period 5y).
+2026-03-15 21:33:53 | INFO     | AstroGoldHH | 
+2026-03-15 21:33:53 | INFO     | AstroGoldHH |   /analyze completed in 0.25s
+2026-03-15 21:51:47 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 21:51:47 | INFO     | AstroGoldHH | ║  /analyze  |  GC=F  |  period=5y  |  interval=1d             ║
+2026-03-15 21:51:47 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 21:51:47 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Fetching market data …
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ✓  Layer 1 — 1258 rows saved → GC_F_1d.csv
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Loading CSV for strategy …
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ✓  Layer 1 — Loaded 1258 rows for strategy engine
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Running AstroGoldHH strategy engine …
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ✓  Layer 2 — Indicators calculated | BUY: 18  SELL: 0
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Saving strategy output CSV …
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   ✓  Layer 2 — Saved → GC_F_strategy_output.csv
+2026-03-15 21:51:48 | INFO     | AstroGoldHH | 
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   Signal preview (last 5):
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |     BUY           2024-02-23 00:00:00  Close=2038.60  RSI=56.1
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |     BUY           2024-11-29 00:00:00  Close=2657.00  RSI=50.7
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |     BUY           2024-12-04 00:00:00  Close=2653.80  RSI=50.5
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |     BUY           2024-12-09 00:00:00  Close=2664.90  RSI=52.6
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |     BUY           2025-01-02 00:00:00  Close=2658.90  RSI=53.0
+2026-03-15 21:51:48 | INFO     | AstroGoldHH | 
+2026-03-15 21:51:48 | INFO     | AstroGoldHH |   /analyze completed in 0.47s
+2026-03-15 21:53:23 | INFO     | AstroGoldHH | ╔══════════════════════════════════════════════════════════════╗
+2026-03-15 21:53:23 | INFO     | AstroGoldHH | ║  /analyze  |  GC=F  |  period=5y  |  interval=1d             ║
+2026-03-15 21:53:23 | INFO     | AstroGoldHH | ╚══════════════════════════════════════════════════════════════╝
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Fetching market data …
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ✓  Layer 1 — 1258 rows saved → GC_F_1d.csv
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ⟳  Layer 1 — Loading CSV for strategy …
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ✓  Layer 1 — Loaded 1258 rows for strategy engine
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Running AstroGoldHH strategy engine …
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ✓  Layer 2 — Indicators calculated | BUY: 18  SELL: 0
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ⟳  Layer 2 — Saving strategy output CSV …
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   ✓  Layer 2 — Saved → GC_F_strategy_output.csv
+2026-03-15 21:53:23 | INFO     | AstroGoldHH | 
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   Signal preview (last 5):
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |     BUY           2024-02-23 00:00:00  Close=2038.60  RSI=56.1
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |     BUY           2024-11-29 00:00:00  Close=2657.00  RSI=50.7
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |     BUY           2024-12-04 00:00:00  Close=2653.80  RSI=50.5
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |     BUY           2024-12-09 00:00:00  Close=2664.90  RSI=52.6
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |     BUY           2025-01-02 00:00:00  Close=2658.90  RSI=53.0
+2026-03-15 21:53:23 | INFO     | AstroGoldHH | 
+2026-03-15 21:53:23 | INFO     | AstroGoldHH |   /analyze completed in 0.45s
